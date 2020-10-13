@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom'
 
-const Navbar = (props) => {
-  console.log(props)
+const Navbar = () => {
   return (
     <nav className="nav-container">
       <ul className="nav-links">
