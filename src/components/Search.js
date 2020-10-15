@@ -3,14 +3,15 @@ import React from 'react';
 function Search({ moviesSearch, handleChange, handleSubmit, ratingColours }) {
   const url = "http://image.tmdb.org/t/p/w185/"
   const movieList = moviesSearch.map(movie => {
+    const { id, poster_path, title, vote_average, overview } = movie
     return (
-      <div key={movie.id} className="movie-card">
-        <img src={url + movie.poster_path} alt="poster" className="movie-poster"></img>
-        <p className="movie-title">{movie.title}</p>
-        <p className={`movie-rating ${ratingColours(movie.vote_average)}`}>{movie.vote_average}</p>
+      <div key={id} className="movie-card">
+        <img src={url + poster_path} alt="poster" className="movie-poster"></img>
+        <p className="movie-title">{title}</p>
+        <p className={`movie-rating ${ratingColours(vote_average)}`}>{vote_average}</p>
         <div className="movie-overview">
           <h2>Overview</h2>
-          <p>{movie.overview}</p></div>
+          <p>{overview}</p></div>
       </div>
     )
   })

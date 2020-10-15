@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LatestMovies from '../components/LatestMovies';
 import Search from '../components/Search';
 import Header from '../components/Header';
+import Movie from '../components/Movie'
 import './App.css';
 
 let currentPage = 1;
@@ -12,7 +13,8 @@ class App extends Component {
   state = {
     movies: [],
     searched: '',
-    movieList: []
+    movieList: [],
+    singleMovie: null
   }
 
   setVoteColor = (vote_average) => {
@@ -64,6 +66,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getLatestMovies()
+
   }
   render() {
     return (
@@ -71,18 +74,22 @@ class App extends Component {
         <BrowserRouter>
           <Header title="NETFAILX" />
           <Navbar />
-          <Route path="/latest" render={() =>
-            <LatestMovies
-              movies={this.state.movies}
-              pagination={this.switchPages}
-              ratingColours={this.setVoteColor} />} />
-          <Route path="/search" render={() =>
-            <Search
-              moviesSearch={this.state.movieList}
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
-              ratingColours={this.setVoteColor}
-            />} />
+          <Switch>
+            <Route path="/latest" render={() =>
+              <LatestMovies
+                movies={this.state.movies}
+                pagination={this.switchPages}
+                ratingColours={this.setVoteColor} />} />
+            <Route path="/search" render={() =>
+              <Search
+                moviesSearch={this.state.movieList}
+                singleMovie={this.state.singleMovie}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                ratingColours={this.setVoteColor}
+              />} />
+            <Route path="/:movie_id" component={Movie} />
+          </Switch>
         </BrowserRouter>
       </div>
     );
