@@ -169,3 +169,50 @@ button {
 .movie-poster__single {
   width: 100vw;
 }
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .movie-card {
+    width: 38%;
+  }
+  .movie-poster {
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .App {
+    font-size: 20px;
+  }
+  .movie-card {
+    width: 30%;
+  }
+
+  .movie-poster {
+    width: 100vw;
+  }
+  
+  .movie-rating {
+    margin-left: 75%;
+  }
+
+  #next, #prev {
+    width: 30%;
+  
+    margin-top: 2em;
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+    .App {
+      font-size: 20px;
+    }
+    
+    .movie-card {
+      width: 22%;
+    }
+    .movie-poster {
+      width: 100%;
+    }
+  }
