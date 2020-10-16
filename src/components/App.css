@@ -38,14 +38,14 @@
 }
 
 .nav-links:first-child {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 li {
   margin: 3em 0;
-  width: 60%;
+  width: 30%;
 }
 
 ul li:nth-child(-n + 2) {
@@ -61,7 +61,7 @@ a {
   color:#C0C0C0;
 }
 
-/* LATEST MOVIES COMPONENT */
+/* LATESTMOVIES & SEARCH COMPONENT */
 
 .movies-container {
   display: flex;
@@ -152,7 +152,25 @@ button {
 #next, #prev {
   width: 40%;
   margin-top: 1em;
+  font-size: 16px;
+  font-weight: 800;
 }
+
+/* SEARCH */
+
+form {
+  margin-bottom: 4vh;
+}
+
+input[type=text] {
+  border-radius: 15px;
+  padding: .5em;
+  background-color: #303030;
+  color: #C0C0C0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
 
 /* MOVIE COMPONENT */
 
@@ -215,4 +233,8 @@ button {
     .movie-poster {
       width: 100%;
     }
+
+    #next, #prev {
+      font-size: 20px;
+     }
   }

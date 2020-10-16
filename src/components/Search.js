@@ -16,15 +16,17 @@ function Search({ moviesSearch, handleChange, handleSubmit, ratingColours }) {
     )
   })
   return (
-    <div className="movies-container">
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Search movie" name="searched" onChange={handleChange}></input>
-        <button>Search Movie</button>
-      </form>
-      {movieList}
+    <div className="search-container">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="Search movie" name="searched" onChange={handleChange}></input>
+        </form>
+      </div>
+      <div className="movies-container">
+        {movieList}
+      </div>
     </div>
   )
 }
-
 
 export default Search;
