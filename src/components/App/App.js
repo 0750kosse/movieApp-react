@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../Navbar/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LatestMovies from '../components/LatestMovies';
-import Search from '../components/Search';
-import Header from '../components/Header';
-import Movie from '../components/Movie'
+import LatestMovies from '../LatestMovies/LatestMovies';
+import Search from '../Search/Search';
+import Header from '../Header/Header';
+import Movie from '../Movie/Movie'
 import './App.css';
 
 let currentPage = 1;
@@ -66,8 +66,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getLatestMovies()
-
   }
+
   render() {
     return (
       <div className="App" >

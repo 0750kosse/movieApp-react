@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component matches the snapshot 1`] = `
+<div
+  className="search-container"
+>
+  <div
+    className="form-container"
+  >
+    <form>
+      <input
+        name="searched"
+        placeholder="Search movie"
+        type="text"
+      />
+    </form>
+  </div>
+  <div
+    className="movies-container"
+  >
+    <div
+      className="movie-card"
+    >
+      <img
+        alt="poster"
+        className="movie-poster"
+        src="http://image.tmdb.org/t/p/w185//sdakldjfal"
+      />
+      <p
+        className="movie-title"
+      >
+        batman
+      </p>
+      <p
+        className="movie-rating function mockConstructor() {
+        return fn.apply(this, arguments);
+      }"
+      >
+        9
+      </p>
+      <div
+        className="movie-overview"
+      >
+        <h2>
+          Overview
+        </h2>
+        <p>
+          batman and robin
+        </p>
+      </div>
+    </div>
+    <div
+      className="movie-card"
+    >
+      <img
+        alt="poster"
+        className="movie-poster"
+        src="http://image.tmdb.org/t/p/w185//2asad"
+      />
+      <p
+        className="movie-title"
+      >
+        tarzan
+      </p>
+      <p
+        className="movie-rating function mockConstructor() {
+        return fn.apply(this, arguments);
+      }"
+      >
+        12
+      </p>
+      <div
+        className="movie-overview"
+      >
+        <h2>
+          Overview
+        </h2>
+        <p>
+          tarzan and jane
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search component renders correctly when items are passed in 1`] = `ShallowWrapper {}`;

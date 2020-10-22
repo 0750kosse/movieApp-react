@@ -8,7 +8,6 @@ function LatestMovies({ movies, pagination, ratingColours }) {
       .map(movie => {
         const { title, id, poster_path, overview, vote_average } = movie;
         return (
-
           <div className="movie-card" key={id}>
             <Link to={'/' + id} className="movie-poster__link">
               <img src={`${url}` + poster_path} alt="poster" className="movie-poster"></img>

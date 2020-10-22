@@ -16,14 +16,14 @@ class Movie extends Component {
 
   render() {
     const { id, poster_path, title } = this.state.singleMovie
-
-    return (<div className="movies-container">
-      <div className="movie-card__single">
-        <img src={`${url}` + poster_path} alt="poster" className="movie-poster__single"></img>
-        <p >This is the id: {id}</p>
-        <p >This is the title: {title}</p>
-      </div>
-    </div>)
+    return (
+      <div className="movies-container">
+        <div className="movie-card__single">
+          <img src={`${url}` + poster_path} alt="poster" className="movie-poster__single"></img>
+          <p >This is the id: {id}</p>
+          <p >This is the title: {title}</p>
+        </div>
+      </div>)
   }
 }
 
