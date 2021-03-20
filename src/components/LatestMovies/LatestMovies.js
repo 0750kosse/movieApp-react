@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LatestMovies({ movies, pagination, ratingColours }) {
+function LatestMovies({ movies, pagination, ratingColours, totalPages, currentPage }) {
   const url = "http://image.tmdb.org/t/p/w185/"
   const movieList = movies.length ?
     (movies.filter(item => item.poster_path !== null)
@@ -26,9 +26,10 @@ function LatestMovies({ movies, pagination, ratingColours }) {
   return (
     <div className="movies-container">
       {movieList}
+      <p className="page-index">Page {currentPage} of {totalPages}</p>
       <div className="movieList-pagination" onClick={pagination}>
-        <button type="submit" id="next" >Next Page</button>
         <button type="submit" id="prev">Prev Page</button>
+        <button type="submit" id="next" >Next Page</button>
       </div>
     </div>
   )

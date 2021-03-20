@@ -13,6 +13,8 @@ class App extends Component {
   state = {
     movies: [],
     searched: '',
+    totalPages: '',
+    currentPage: 1,
     movieList: [],
     singleMovie: null
   }
@@ -23,11 +25,22 @@ class App extends Component {
     else return 'red'
   }
 
+  pageUp = () => {
+    currentPage = currentPage + 1
+  }
+
+  pageDown = () => {
+    currentPage > 1 ?
+      currentPage-- :
+      currentPage = 1
+  }
+
   switchPages = (e) => {
     e.preventDefault();
     e.target.id === 'next' ?
-      (currentPage = currentPage + 1) :
-      (currentPage = currentPage - 1)
+      this.pageUp() :
+      this.pageDown()
+    this.setState({ currentPage: currentPage })
     this.getLatestMovies(currentPage)
     this.scroll()
   }
@@ -42,7 +55,7 @@ class App extends Component {
   getLatestMovies() {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=96fc446ecb31737673fc835496bd6ead&page=${currentPage}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=true&vote_count.gte=300`)
       .then(res => res.json())
-      .then(data => this.setState({ movies: data.results }))
+      .then(data => this.setState({ movies: data.results, totalPages: data.total_pages }))
   }
 
   searchedMovies = () => {
@@ -72,12 +85,17 @@ class App extends Component {
     return (
       <div className="App" >
         <BrowserRouter>
-          <Header title="NETFAILX" />
+          <Header
+            title="NETFAILX"
+            subtitle="Click for the latest movies or search by name..."
+          />
           <Navbar />
           <Switch>
             <Route path="/latest" render={() =>
               <LatestMovies
                 movies={this.state.movies}
+                totalPages={this.state.totalPages}
+                currentPage={this.state.currentPage}
                 pagination={this.switchPages}
                 ratingColours={this.setVoteColor} />} />
             <Route path="/search" render={() =>

@@ -9,12 +9,18 @@ Object {
         <h1
           class="title"
         />
+        <p
+          class="title"
+        />
       </div>
     </div>
   </body>,
   "container": <div>
     <div>
       <h1
+        class="title"
+      />
+      <p
         class="title"
       />
     </div>
