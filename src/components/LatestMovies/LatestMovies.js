@@ -26,10 +26,10 @@ function LatestMovies({ movies, pagination, ratingColours, totalPages, currentPa
   return (
     <div className="movies-container">
       {movieList}
-      <p className="page-index">Page {currentPage} of {totalPages}</p>
       <div className="movieList-pagination" onClick={pagination}>
-        <button type="submit" id="prev">Prev Page</button>
-        <button type="submit" id="next" >Next Page</button>
+        <button type="submit" id="prev">Prev</button>
+        <p className="page-index">Page {currentPage} of {totalPages}</p>
+        <button type="submit" id="next" >Next</button>
       </div>
     </div>
   )

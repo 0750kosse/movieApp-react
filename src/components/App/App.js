@@ -16,7 +16,7 @@ class App extends Component {
     totalPages: '',
     currentPage: 1,
     movieList: [],
-    singleMovie: null
+    singleMovie: null,
   }
 
   setVoteColor = (vote_average) => {
@@ -106,7 +106,9 @@ class App extends Component {
                 handleSubmit={this.handleSubmit}
                 ratingColours={this.setVoteColor}
               />} />
-            <Route path="/:movie_id" component={Movie} />
+            <Route path="/:movie_id"
+              component={Movie}
+            />
           </Switch>
         </BrowserRouter>
       </div>
